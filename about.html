@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #000;
+            background-color: #000000e3;
             color: #fff;
             font-family: 'Calibri', sans-serif;
         }
@@ -25,6 +25,7 @@
         .logo-container {
             position: fixed;
             top: 20px;
+           
             left: 20px;
             z-index: 100;
         }
@@ -193,9 +194,45 @@
                 text-align: center;
             }
         }
+
+
+                /* Header navigation */
+                .header {
+            width: 100%;
+            padding: 15px 0;
+         
+            position: absolute;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .header a {
+            text-decoration: none;
+            color: #ffffff;
+            margin: 0 15px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .header a:hover {
+            color: #3d9eee;
+        }
+        
     </style>
 </head>
 <body>
+
+     <!-- heADER -->
+    <section class="header">
+        <a href="#">ARTIFICIAL INTELLIGENCE(AI)</a>
+        <a href="#">BNJ TECH TRAINING CENTER</a>
+        <a href="#">GPS TRACKING SYSTEM</a>
+        <a href="#">HUMANOID ROBOTIC</a>
+        <a href="#">RESEARCH</a>
+    </section>
     <!-- Logo/Home Link -->
     <div class="logo-container">
         <a href="index.html"><img src="BNJ TECH.png" alt="BNJ TECH Logo"></a>
@@ -211,7 +248,7 @@
         <img class="content-image" src="about-1.jpg" alt="BNJ TECH Story">
         
         <h1>The Story So Far</h1>
-        <p>“You want to wake up in the morning and think the future is going to be great - and that's what being a spacefaring civilization is all about. It's about believing in the future and thinking that the future will be better than the past. And I can't think of anything more exciting than going out there and being among the stars.” - Niranjan Kumar T</p>
+        <p>“You want to wake up in the morning and think the future is going to be great - and that's what being a spacefaring civilization is all about. It's about believing in the future and thinking that the future will be better than the past. And I can't think of anything more exciting than going out there and being among the stars.” <br>-- Niranjan Kumar T --</p>
         
         <div class="video-container">
             <video autoplay loop muted playsinline>
@@ -220,7 +257,7 @@
         </div>
         
         <h1>BNJ Group's</h1>
-        <p>It will Started at 2020, founder And CEO of BNJ Group's "Niranjan Kumar T". His is Born on 21-sep-2001.<br><br>A live virtual class while doing in Online Mode with a Lowest Cost of College students.<br><br>BNJ TECH is an e-learning and Research startup that provides online engineering courses for students.<br><br>We are successfully moved on this company at Last Five years.</p>
+        <p>It will Started at 2020, founder And CEO of BNJ Group's "Niranjan Kumar T".<br><br>A live virtual class while doing in Online and Offline Mode with a Lowest Cost of College students.<br><br>BNJ TECH is an e-learning and Research startup that provides online engineering courses for students.<br><br>We are successfully moved on this company at Last Five years.</p>
         
         <div class="video-container">
             <video autoplay loop muted playsinline>

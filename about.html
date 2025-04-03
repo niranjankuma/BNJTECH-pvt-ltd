@@ -3,136 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABOUT</title>
+    <title>ABOUT - BNJ TECH</title>
     <link rel="icon" href="BNJ TECH.png">
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Calibri', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Header/Logo */
+        .logo-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: auto;
+        }
+
+        /* Main content sections */
+        .hero-section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            margin: 40px auto;
+            display: block;
+            border-radius: 8px;
+            animation: appear linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 30%;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                scale: 0;
+                clip-path: inset(100% 100% 0 0);
+            }
+            to {
+                opacity: 1;
+                scale: 1;
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        h1:hover, h2:hover {
+            color: #3d9eee;
+        }
+
+        p {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            color: #888;
+            line-height: 1.6;
+            transition: color 0.3s;
+        }
+
+        p:hover {
+            color: #fff;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 750px;
+            margin: 60px auto;
+            display: block;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #000;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-media a {
+            color: #fff;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #3d9eee;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin: 15px 0;
+            padding: 0 15px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo-container img {
+                width: 80px;
+            }
+
+            .content-section {
+                padding: 40px 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .footer-column {
+                min-width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <div class="img-1">
-            <a><img src="about.jpg">
-        </div>
-    </section>
-    <section>
-        <div class="img-2">
-            <img src="about-1.jpg">
-        </div>
-    </section>
-
-    <section>
-        <div class="img-0">
-            <a href="index.html"><img src="BNJ TECH.png">
-        </div>
-    </section>
-    <section>
-        <div class="ab-1">
-            <h1>The Story So Far</h1>
-            <p>“You want to wake up in the morning and think the future is going to
-                 be great - and that’s what being a spacefaring civilization is all about. 
-                 It’s about believing in the future and thinking that the future will be 
-                 better than the past.
-                 And I can’t think of anything more exciting than going out there and 
-                 being among the stars.” -Niranjan Kumar T</p>
-        </div>
-    </section>
-    <section>
-        <div class="vi-2">
-           <video autoplay loop muted plays-inline>
-            <source src="ab-2.mp4" type="video/mp4">
-           </video>
-        </div>
-    </section>
-    <section>
-        <div class="ab-c1">
-            <h1>BNJ Group's</h1><br>
-                <p>It will Started at 2020, founder And CEO of BNJ Group's "Niranjan Kumar T". His is Born on 21-sep-2001.<br><br>A live virtual class. 
-                <br>while doing in Online Mode with a Lowest Cost of College students.
-                
-                <br>BNJ TECH is an e-learning and Research startup that provides online engineering courses for students.
-                
-                <br>We are successfully moved on this company at Last Five years.</p>
-        </div>
-    </section>
-    <section>
-        <div class="vi-3">
-           <video autoplay loop muted plays-inline>
-            <source src="ab-3.mp4" type="video/mp4">
-           </video>
-        </div>
-    </section>
-    <section>
-        <div class="ab-c2">
-            <h2>INVENTION</h2><br>
-                <p>An invention is a unique or novel device, method, composition, idea or process.<br>
-
-                    An invention may be an improvement upon a machine, product, or process for increasing efficiency or lowering cost.
-                    
-                    It may also be an entirely new concept.<br>
-                    
-                    If an idea is unique enough either as a stand alone invention or as a significant improvement over the work of others, it can be patented.
-                    
-                    A patent, if granted, gives the inventor a proprietary interest in the patent over a specific period of time, which can be licensed for financial gain.
-                    
-                    We create a new ideas and new products creation its fully depand on a science and technology.
-                    </p>
-        </div>
-    </section>
-    <!-- social media -->
-  <section>
-    <div class="socialmedia">
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-facebook" style="color: #fafafa; width: 40px;"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-instagram" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-twitter" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-youtube" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-github" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-google" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-amazon" style="color: #ffffff;width: 40px"></i>
-      </a>
-    </div>
-  </section>
-  <section>
-    <div  class="copyright">
-      <P>Copyright © 2021, BNJ TECH Pvt,Ltd. All rights reserved. 
-        | In Partner with BNJ Groups</P>
-    </div>
-  </section>
-  <section>
-    <div class="location">
-      <h2>Head – Office :</h2>
-      <img src="map.png" style="width: 20px;">
-      <br><p>
-        BNJ TECH Pvt,Ltd,<br>
-        Kaveri Nagar,Garudacharayapalliya,<br> Near ITPL Road<br> 
-        Bengaluru, Karnataka 560048</p>
+    <!-- Logo/Home Link -->
+    <div class="logo-container">
+        <a href="index.html"><img src="BNJ TECH.png" alt="BNJ TECH Logo"></a>
     </div>
 
-    <div class="Phone">
-      <img src="phone.png" style="width: 20px;">
-      OFFICE – 9585-564-265
-    </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img class="hero-image" src="about.jpg" alt="BNJ TECH About">
+    </section>
 
-    <div  class="email">
-      <img src="gmail.png"style="width: 20px;">
-      <P>bnjtechresearch@gmail.com</P>
-    </div>
-    <div class="Stay-Connected">
-      <p>Stay Connected</p>
-     </div> 
-  </section>
+    <!-- Main Content -->
+    <section class="content-section">
+        <img class="content-image" src="about-1.jpg" alt="BNJ TECH Story">
+        
+        <h1>The Story So Far</h1>
+        <p>“You want to wake up in the morning and think the future is going to be great - and that's what being a spacefaring civilization is all about. It's about believing in the future and thinking that the future will be better than the past. And I can't think of anything more exciting than going out there and being among the stars.” - Niranjan Kumar T</p>
+        
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="ab-2.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <h1>BNJ Group's</h1>
+        <p>It will Started at 2020, founder And CEO of BNJ Group's "Niranjan Kumar T". His is Born on 21-sep-2001.<br><br>A live virtual class while doing in Online Mode with a Lowest Cost of College students.<br><br>BNJ TECH is an e-learning and Research startup that provides online engineering courses for students.<br><br>We are successfully moved on this company at Last Five years.</p>
+        
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="ab-3.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <h2>INVENTION</h2>
+        <p>An invention is a unique or novel device, method, composition, idea or process.<br><br>An invention may be an improvement upon a machine, product, or process for increasing efficiency or lowering cost. It may also be an entirely new concept.<br><br>If an idea is unique enough either as a stand alone invention or as a significant improvement over the work of others, it can be patented. A patent, if granted, gives the inventor a proprietary interest in the patent over a specific period of time, which can be licensed for financial gain.<br><br>We create a new ideas and new products creation its fully depand on a science and technology.</p>
+    </section>
 
-
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+        </div>
+        
+        <div class="footer-info">
+            <div class="footer-column">
+                <h3>Head Office:</h3>
+                <p>
+                    BNJ TECH Pvt,Ltd,<br>
+                    Kaveri Nagar, Garudacharayapalliya,<br> 
+                    Near ITPL Road<br> 
+                    Bengaluru, Karnataka 560048
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact:</h3>
+                <p><i class="fas fa-phone"></i> OFFICE - 9585-564-265</p>
+                <p><i class="fas fa-envelope"></i> bnjtechresearch@gmail.com</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for updates</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>Copyright © 2021, BNJ TECH Pvt,Ltd. All rights reserved. | In Partner with BNJ Groups</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -4,115 +4,365 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission</title>
-    <link rel="stylesheet" href="mission.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .logo img {
+            width: 160px;
+            background-color: transparent;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            background-color: transparent;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #1d70dd;
+        }
+
+        /* Mission Content */
+        .img-1 {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .img-1 img {
+            width: 100%;
+            height: auto;
+            max-height: 650px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-1 p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-style: italic;
+            font-weight: bold;
+            font-size: 2rem;
+            text-align: center;
+            background-color: transparent;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .mission-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .mission-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .mission-images img:hover {
+            transform: scale(1.03);
+        }
+
+        .mission-content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .video-container {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            margin-top: 2rem;
+        }
+
+        .socialmedia {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .socialmedia a {
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .socialmedia a:hover {
+            color: #1d70dd;
+        }
+
+        .contact-info {
+            margin: 1.5rem 0;
+            line-height: 1.8;
+        }
+
+        .contact-info div {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #f1f1f1cb;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 1rem;
+                display: none;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .img-1 p {
+                font-size: 1.5rem;
+            }
+
+            .mission-content {
+                padding: 1rem;
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .img-1 p {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            .img-1 p {
+                font-size: 3.5rem;
+            }
+            
+            .mission-images img {
+                max-width: 500px;
+            }
+        }
+
+        /* Animations */
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mission-images img {
+            animation: appear 0.8s ease-out forwards;
+        }
+
+        .mission-images img:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .mission-images img:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .mission-images img:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <div class="img-1">
-            <img src="miss.jpg">
-            <p></p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="BNJ TECH.png" alt="BNJ Tech Logo"></a>
         </div>
-    </section>
-    <section>
-        <div class="img-1">
-            <p>MISSION</p>
-        </div>
-    </section>
-    <section>
-        <div class="img-0">
-            <a href="index.html"><img src="BNJ TECH.png">
-        </div>
-    </section>
-    <section>
-        <div class="img-2">
-            <img src="M1.jpeg">
-            <p></p>
-        </div>
-    </section><section>
-        <div class="img-3">
-            <img src="M4.jpeg">
-            <p></p>
-        </div>
-    </section><section>
-        <div class="img-4">
-            <img src="M3.jpeg">
-            <p></p>
-        </div>
+        <button class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Mission</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mission Banner -->
+    <section class="img-1">
+        <img src="miss.jpg" alt="Mission Banner">
+        <p>MISSION</p>
     </section>
 
-    <section>
-        <div class="c1">
-            <p>Educents is a trusted resource for affordable educational materials, 
-                aiming to make learning accessible and fun for every child. 
-                Since its launch in April 2013, Educents has saved educators over and has helped more than 600+
-                teachers,homeschoolers, and parents access educational materials in one place</p>
+    <!-- Mission Images -->
+    <section class="mission-images">
+        <img src="M1.jpeg" alt="Mission Image 1">
+        <img src="M4.jpeg" alt="Mission Image 2">
+        <img src="M3.jpeg" alt="Mission Image 3">
+    </section>
+
+    <!-- Mission Content -->
+    <section class="mission-content">
+        <p>Educents is a trusted resource for affordable educational materials, 
+            aiming to make learning accessible and fun for every child. 
+            Since its launch in April 2013, Educents has saved educators over and has helped more than 600+
+            teachers, homeschoolers, and parents access educational materials in one place.</p>
+    </section>
+    
+    <!-- Video -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="m1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="socialmedia">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-amazon"></i></a>
         </div>
-    </section></p>
-    <div class="vi-1">
-        <video autoplay loop muted plays-inline>
-          <source src="m1.mp4" type="video/mp4">
-         </video>
-      </div>
+        
+        <div class="Stay-Connected">
+            <h3>Stay Connected</h3>
+        </div>
+        
+        <div class="contact-info">
+            <div class="location">
+                <img src="map.png" alt="Map icon">
+                <div>
+                    <h4>Head – Office :</h4>
+                    <p>
+                        BNJ TECH Pvt,Ltd,<br>
+                        Kaveri Nagar, Garudacharayapalliya,<br> 
+                        Near ITPL Road<br> 
+                        Bengaluru, Karnataka 560048
+                    </p>
+                </div>
+            </div>
 
+            <div class="Phone">
+                <img src="phone.png" alt="Phone icon">
+                <span>OFFICE – 9585-564-265</span>
+            </div>
 
+            <div class="email">
+                <img src="gmail.png" alt="Email icon">
+                <p>bnjtechresearch@gmail.com</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>Copyright © 2021, BNJ TECH Pvt,Ltd. All rights reserved. | In Partner with BNJ Groups</p>
+        </div>
+    </footer>
 
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+        });
 
-
-    <!-- social media -->
-  <section>
-    <div class="socialmedia">
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-facebook" style="color: #fafafa; width: 40px;"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-instagram" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-twitter" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-youtube" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-github" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-google" style="color: #ffffff;width: 40px"></i>
-      </a>
-      <a href="https://www.flaticon.com/search?style_id=6&author_id=1&word=instagram+logo&type=standard">
-        <i class="fa-brands fa-amazon" style="color: #ffffff;width: 40px"></i>
-      </a>
-    </div>
-  </section>
-  <section>
-    <div  class="copyright">
-      <P>Copyright © 2021, BNJ TECH Pvt,Ltd. All rights reserved. 
-        | In Partner with BNJ Groups</P>
-    </div>
-  </section>
-  <section>
-    <div class="location">
-      <h2>Head – Office :</h2>
-      <img src="map.png" style="width: 20px;">
-      <br><p>
-        BNJ TECH Pvt,Ltd,<br>
-        Kaveri Nagar,Garudacharayapalliya,<br> Near ITPL Road<br> 
-        Bengaluru, Karnataka 560048</p>
-    </div>
-
-    <div class="Phone">
-      <img src="phone.png" style="width: 20px;">
-      OFFICE – 9585-564-265
-    </div>
-
-    <div  class="email">
-      <img src="gmail.png"style="width: 20px;">
-      <P>info@jbas.co.in</P>
-    </div>
-    <div class="Stay-Connected">
-      <p>Stay Connected</p>
-     </div> 
-  </section>
-</body>
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

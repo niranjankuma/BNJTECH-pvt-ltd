@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BNJ Tech Pvt Ltd</title>
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --card-bg: #fff;
+      --header-bg: #0d47a1;
+      --btn-bg: #1976d2;
+      --nav-bg: #0b3d91;
+      --nav-link-color: white;
+      --nav-link-hover: #bbdefb;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #f4f4f4;
+      --card-bg: #1e1e1e;
+      --header-bg: #000;
+      --btn-bg: #333;
+      --nav-bg: #111;
+      --nav-link-color: #ccc;
+      --nav-link-hover: #666;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.5s, color 0.5s;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--header-bg);
+      color: white;
+      padding: 30px 20px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      width: 60px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 5px;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--nav-link-color);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--nav-link-hover);
+      color: var(--header-bg);
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: var(--btn-bg);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background: var(--header-bg);
+    }
+
+    section {
+      padding: 40px 20px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      border-bottom: 2px solid var(--header-bg);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.2s, background 0.5s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      padding: 10px;
+      font-size: 1.2em;
+    }
+
+    .card p {
+      padding: 0 10px 10px;
+    }
+
+    footer {
+      background: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
+
+      .theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      .card img {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card-container {
+        padding: 10px;
+        gap: 15px;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      header img {
+        width: 40px;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://via.placeholder.com/60x60.png?text=B" alt="BNJ Logo" />
+    <h1>BNJ Tech Pvt Ltd</h1>
+    <p>Empowering Future Minds with Tech & Internships</p>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+
+  <nav>
+    <a href="#workshops">Workshops</a>
+    <a href="#seminars">Seminars</a>
+    <a href="#motivational">Motivational Speeches</a>
+    <a href="#internships">Internship Courses</a>
+    <a href="#software-tech">Software Technologies</a>
+    <a href="#ai-tools">AI Tools</a>
+    <a href="#upcoming-tech">Upcoming Technologies</a>
+  </nav>
+
+  <section id="workshops">
+    <h2 class="section-title">Technical Workshops</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Workshop" alt="Workshop" />
+        <h3>Hands-on Workshops</h3>
+        <p>Hands-on sessions on trending tech with expert mentors.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Cloud+Computing" alt="Cloud Computing Workshop" />
+        <h3>Cloud Computing</h3>
+        <p>Learn about AWS, Azure, and Google Cloud platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="seminars">
+    <h2 class="section-title">Industry Seminars</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Seminar" alt="Seminar" />
+        <h3>Expert Insights</h3>
+        <p>Insights from industry leaders and domain experts.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Cybersecurity" alt="Cybersecurity Seminar" />
+        <h3>Cybersecurity Trends</h3>
+        <p>Latest in security protocols and best practices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="motivational">
+    <h2 class="section-title">Motivational Speeches</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Motivation" alt="Motivation" />
+        <h3>Inspiration Talks</h3>
+        <p>Inspiring talks to boost your confidence and mindset.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Success+Story" alt="Success Story" />
+        <h3>Success Stories</h3>
+        <p>Learn from real journeys of tech entrepreneurs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="internships">
+    <h2 class="section-title">Internship Courses</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Web+Development" alt="Web Development Internship" />
+        <h3>Web Development</h3>
+        <p>Learn HTML, CSS, JavaScript, and React.js.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Data+Science" alt="Data Science Internship" />
+        <h3>Data Science</h3>
+        <p>Data analysis, visualization, and machine learning basics.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Mobile+Apps" alt="Mobile Apps Internship" />
+        <h3>Mobile App Development</h3>
+        <p>Build Android and iOS apps with Flutter and React Native.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="software-tech">
+    <h2 class="section-title">Software Technologies</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=JavaScript" alt="JavaScript" />
+        <h3>JavaScript</h3>
+        <p>Popular scripting language for web development.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Python" alt="Python" />
+        <h3>Python</h3>
+        <p>Versatile language used in AI, data science, and web dev.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Docker" alt="Docker" />
+        <h3>Docker</h3>
+        <p>Containerization platform for easier deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai-tools">
+    <h2 class="section-title">AI Tools</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=ChatGPT" alt="ChatGPT" />
+        <h3>ChatGPT</h3>
+        <p>Advanced conversational AI for various applications.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=TensorFlow" alt="TensorFlow" />
+        <h3>TensorFlow</h3>
+        <p>Open-source library for machine learning and deep learning.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=OpenCV" alt="OpenCV" />
+        <h3>OpenCV</h3>
+        <p>Computer vision library for image and video processing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="upcoming-tech">
+    <h2 class="section-title">Upcoming Technologies</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Quantum+Computing" alt="Quantum Computing" />
+        <h3>Quantum Computing</h3>
+        <p>Next-generation computing with quantum mechanics.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=5G+Networks" alt="5G Networks" />
+        <h3>5G Networks</h3>
+        <p>High-speed wireless communication technology.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Edge+Computing" alt="Edge Computing" />
+        <h3>Edge Computing</h3>
+        <p>Processing data closer to the data source for faster response.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BNJ Tech Pvt Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BNJ Tech Pvt Ltd</title>
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --card-bg: #fff;
+      --header-bg: #0d47a1;
+      --btn-bg: #1976d2;
+      --nav-bg: #0b3d91;
+      --nav-link-color: white;
+      --nav-link-hover: #bbdefb;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #f4f4f4;
+      --card-bg: #1e1e1e;
+      --header-bg: #000;
+      --btn-bg: #333;
+      --nav-bg: #111;
+      --nav-link-color: #ccc;
+      --nav-link-hover: #666;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.5s, color 0.5s;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--header-bg);
+      color: white;
+      padding: 30px 20px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img {
+      width: 60px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 5px;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--nav-link-color);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--nav-link-hover);
+      color: var(--header-bg);
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: var(--btn-bg);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .theme-toggle:hover {
+      background: var(--header-bg);
+    }
+
+    section {
+      padding: 40px 20px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      border-bottom: 2px solid var(--header-bg);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.2s, background 0.5s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      padding: 10px;
+      font-size: 1.2em;
+    }
+
+    .card p {
+      padding: 0 10px 10px;
+    }
+
+    footer {
+      background: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .card {
+        width: 90%;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
+
+      .theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      .card img {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card-container {
+        padding: 10px;
+        gap: 15px;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      header img {
+        width: 40px;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://via.placeholder.com/60x60.png?text=B" alt="BNJ Logo" />
+    <h1>BNJ Tech Pvt Ltd</h1>
+    <p>Empowering Future Minds with Tech & Internships</p>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+
+  <nav>
+    <a href="#workshops">Workshops</a>
+    <a href="#seminars">Seminars</a>
+    <a href="#motivational">Motivational Speeches</a>
+    <a href="#internships">Internship Courses</a>
+    <a href="#software-tech">Software Technologies</a>
+    <a href="#ai-tools">AI Tools</a>
+    <a href="#upcoming-tech">Upcoming Technologies</a>
+  </nav>
+
+  <section id="workshops">
+    <h2 class="section-title">Technical Workshops</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Workshop" alt="Workshop" />
+        <h3>Hands-on Workshops</h3>
+        <p>Hands-on sessions on trending tech with expert mentors.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Cloud+Computing" alt="Cloud Computing Workshop" />
+        <h3>Cloud Computing</h3>
+        <p>Learn about AWS, Azure, and Google Cloud platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="seminars">
+    <h2 class="section-title">Industry Seminars</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Seminar" alt="Seminar" />
+        <h3>Expert Insights</h3>
+        <p>Insights from industry leaders and domain experts.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Cybersecurity" alt="Cybersecurity Seminar" />
+        <h3>Cybersecurity Trends</h3>
+        <p>Latest in security protocols and best practices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="motivational">
+    <h2 class="section-title">Motivational Speeches</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Motivation" alt="Motivation" />
+        <h3>Inspiration Talks</h3>
+        <p>Inspiring talks to boost your confidence and mindset.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Success+Story" alt="Success Story" />
+        <h3>Success Stories</h3>
+        <p>Learn from real journeys of tech entrepreneurs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="internships">
+    <h2 class="section-title">Internship Courses</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Web+Development" alt="Web Development Internship" />
+        <h3>Web Development</h3>
+        <p>Learn HTML, CSS, JavaScript, and React.js.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Data+Science" alt="Data Science Internship" />
+        <h3>Data Science</h3>
+        <p>Data analysis, visualization, and machine learning basics.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Mobile+Apps" alt="Mobile Apps Internship" />
+        <h3>Mobile App Development</h3>
+        <p>Build Android and iOS apps with Flutter and React Native.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="software-tech">
+    <h2 class="section-title">Software Technologies</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=JavaScript" alt="JavaScript" />
+        <h3>JavaScript</h3>
+        <p>Popular scripting language for web development.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Python" alt="Python" />
+        <h3>Python</h3>
+        <p>Versatile language used in AI, data science, and web dev.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Docker" alt="Docker" />
+        <h3>Docker</h3>
+        <p>Containerization platform for easier deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai-tools">
+    <h2 class="section-title">AI Tools</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=ChatGPT" alt="ChatGPT" />
+        <h3>ChatGPT</h3>
+        <p>Advanced conversational AI for various applications.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=TensorFlow" alt="TensorFlow" />
+        <h3>TensorFlow</h3>
+        <p>Open-source library for machine learning and deep learning.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=OpenCV" alt="OpenCV" />
+        <h3>OpenCV</h3>
+        <p>Computer vision library for image and video processing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="upcoming-tech">
+    <h2 class="section-title">Upcoming Technologies</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Quantum+Computing" alt="Quantum Computing" />
+        <h3>Quantum Computing</h3>
+        <p>Next-generation computing with quantum mechanics.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=5G+Networks" alt="5G Networks" />
+        <h3>5G Networks</h3>
+        <p>High-speed wireless communication technology.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x180?text=Edge+Computing" alt="Edge Computing" />
+        <h3>Edge Computing</h3>
+        <p>Processing data closer to the data source for faster response.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BNJ Tech Pvt Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpot" content="width=device-width, initial-scale=1.0">
+  <title>Up Coming Updates</title>
+  <link rel="stylesheet" href="Update.css">
+</head>
+<body>
+
+  <div class="header">Startup Updates</div>
+
+ 
+  <section>
+    <div class="img-0">
+        <a href="index.html"> <img src="BNJ TECH.png" style="width: 120px; margin-top: -90px;"></a>
+    </div>
+  </section>
+
+  <!-- Latest Updates Section -->
+  <div class="container">
+    <h2>Latest Updates</h2>
+    <div class="update">
+      <h3>BGS Institute Signs Landmark Memorandum of Understanding (MoU)
+        - Octobar 2024</h3>
+      <p>1.BGS Institute is proud to announce the successful signing of a Memorandum of Understanding (MoU) with "BNJ TECH Pvt,Ltd". <br><br>
+        2.BGS Institute is proud to announce the successful signing of a Memorandum of Understanding (MoU) with ["BNJ TECH Pvt,Ltd".<br><br>
+        3.This strategic partnership marks a significant step forward in fostering academic excellence, research collaboration, and industry engagement.
+
+      </p>
+    </div>
+
+
+    <div class="update">
+      <h3>Office Expansion</h3>
+      <p>1.We are thrilled to announce the expansion of our office space to accommodate our growing team and enhance our capabilities. 
+        <br> <br>2.This expansion reflects our continued commitment to excellence, innovation, and providing an enriched environment for both employees<br><br>
+         and stakeholders.
+
+      </p>
+    </div>
+  
+
+
+    <div class="update">
+      <h3>Website Redesign</h3>
+      <p>1. A website redesign is crucial in today's digital market because it allows businesses to refresh their online presence,
+        <br><br> providing a better user experience, improved functionality, and increased engagement with potential customers, essentially<br><br>
+      creating a more positive first impression that can significantly impact brand perception and lead to better business outcomes. 
+      </p>
+
+
+    </div>
+    <div class="update">
+      <h3>CSR Initiative</h3>
+      <p>We are launching a CSR initiative to support education in local communities.</p>
+    </div>
+  
+  
+  <!-- Upcoming Projects Section -->
+  <div class="container">
+    <h2>Upcoming Projects</h2>
+    <div class="project">
+      <h3>AI-powered Analytics Tool</h3>
+      <img src="ai_project.jpg" alt="AI-powered Analytics Tool">
+      <p>Helping businesses make data-driven decisions with advanced AI analytics.</p>
+    </div>
+    <div class="project">
+      <h3>Mobile App Development</h3>
+      <img src="mobile_app.jpg" alt="Mobile App Development">
+      <p>Enhancing user experience with a state-of-the-art mobile application.</p>
+    </div>
+    <div class="project">
+      <h3>Cloud Security Enhancement</h3>
+      <img src="cloud_security.jpg" alt="Cloud Security Enhancement">
+      <p>Strengthening our cloud security framework for better data protection.</p>
+    </div>
+    <div class="project">
+      <h3>IoT Solutions</h3>
+      <img src="iot.jpg" alt="IoT Solutions">
+      <p>Developing smart devices to streamline automation in various industries.</p>
+    </div>
+   
+    <div class="project">
+      <h3>Green Energy Initiative</h3>
+      <img src="green_energy.jpg" alt="Green Energy Initiative">
+      <p>Investing in sustainable energy solutions to reduce our carbon footprint.</p>
+    </div>
+  </div>
+  
+  <!-- Contact Section -->
+  <div class="contact">
+    <h3>Contact Us</h3>
+    <a href="https://www.linkedin.com/company/startup">LinkedIn</a>
+    <a href="https://twitter.com/startup">Twitter</a>
+    <a href="mailto:contact@startup.com">Email</a>
+  </div>
+  
+  <!-- Address Section -->
+  <div class="address">
+    <br><p>
+        BNJ TECH Pvt,Ltd,<br>
+        Kaveri Nagar,Garudacharayapalliya,<br> Near ITPL Road<br> 
+        Bengaluru, Karnataka 560048
+    <p>Phone: (91) 958-5564265</p>
+  </div>
+  
+  <!-- Scroll-triggered animation script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      // Observe all update and project elements
+      document.querySelectorAll('.update, .project').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
